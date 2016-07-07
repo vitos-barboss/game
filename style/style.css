@@ -1,0 +1,123 @@
+.container {
+    width: 1056px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.gameFrame {
+    height: 536px;
+    width: 1056px;
+    background: url("../img/bg.png") no-repeat;
+    background-size: 1056px 536px;
+    z-index: 10;
+}
+
+.title {
+    color: white;
+    font-size: 30px;
+    padding: 15px 0;
+}
+
+.topTitle {
+    margin-left: 55%;
+}
+
+.bottomTitle {
+    margin-left: 5%;
+}
+
+.moneyCount {
+    color: aqua;
+}
+
+.gunmanContainer {
+    padding-left: 1056px;
+    padding-top: 130px;
+    animation-timing-function: linear;
+    transition:  5s;
+    position: relative;
+    transform: scale(2);
+}
+
+.gunman {
+    background-image: url("../img/gunman.png");
+    height: 138px;
+    width: 75px;
+    background-size: 1056px 768px;
+
+    /*transform: rotateY(180deg);*/
+    animation: walking 1s step-start;
+    animation-iteration-count: 5;
+
+}
+
+.fall {
+    animation: falling 1s;
+}
+
+@keyframes walking {
+    0%  {background-position: 0px 0px;}
+    33% {background-position: -75px 0px;}
+    66% {background-position: -150px 0px;}
+}
+
+@keyframes falling {
+    0%  {background-position: -608px 0px;}
+    33% {background-position: -683px 0px;}
+    66% {background-position: -758px 0px;}
+}
+
+.fightMessage {
+     height: 80px;
+     width: 240px;
+     position: absolute;
+     margin: 0 auto;
+     color: white;
+     font-size: 60px;
+     font-weight: bold;
+     left: 40%;
+     top: 30%;
+     text-shadow: 2px 2px 2px black;
+ }
+
+.nextLevel {
+    width: 186px;
+    position: absolute;
+    margin: 0 auto;
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 10px;
+    right: 2%;
+    top: 90%;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: transparent;
+}
+
+.newGame {
+    width: 186px;
+    position: absolute;
+    margin: 0 auto;
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 10px;
+    left: 2%;
+    top: 90%;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
