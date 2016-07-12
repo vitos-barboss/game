@@ -1,42 +1,49 @@
 .container {
     width: 1056px;
+    height: 535px;
     margin: 0 auto;
     position: relative;
-}
-
-.gameFrame {
-    height: 536px;
-    width: 1056px;
     background: url("../img/bg.png") no-repeat;
     background-size: 1056px 536px;
-    z-index: 10;
 }
 
 .title {
     color: white;
     font-size: 30px;
-    padding: 15px 0;
+    /*padding: 15px 0;*/
+    margin-left: 55px;
+    padding-top: 20px;
+    list-style-type: none;
+
 }
 
-.topTitle {
-    margin-left: 55%;
+.playerScore, .gunmanScore {
+    display: inline-block;
 }
 
-.bottomTitle {
-    margin-left: 5%;
+.playerScore:before {
+    content: "Player ";
 }
 
-.moneyCount {
-    color: aqua;
+.gunmanScore:after {
+    content: " Gunman";
+}
+
+.scoreCount:before {
+    content: "Score: ";
+    text-align: center;
 }
 
 .gunmanContainer {
-    padding-left: 1056px;
-    padding-top: 130px;
+    height: 138px;
+    width: 75px;
+    position: absolute;
     animation-timing-function: linear;
-    transition:  5s;
-    position: relative;
+    transition: 5s;
     transform: scale(2);
+    margin-top: 155px;
+    right: 0;
+
 }
 
 .gunman {
@@ -44,7 +51,6 @@
     height: 138px;
     width: 75px;
     background-size: 1056px 768px;
-
     /*transform: rotateY(180deg);*/
     animation: walking 1s step-start;
     animation-iteration-count: 5;
@@ -67,17 +73,23 @@
     66% {background-position: -758px 0px;}
 }
 
+@keyframes shake {
+    0% { transform: rotate(-1deg); }
+    25% { transform: scale(1deg); }
+    50% { transform: scale(-2deg); }
+    100% { transform: scale(2deg); }
+}
+
 .fightMessage {
-     height: 80px;
-     width: 240px;
-     position: absolute;
-     margin: 0 auto;
-     color: white;
-     font-size: 60px;
-     font-weight: bold;
-     left: 40%;
-     top: 30%;
-     text-shadow: 2px 2px 2px black;
+    height: 80px;
+    text-align: center;
+    margin: 0 auto;
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+    left: 40%;
+    top: 26%;
+    text-shadow: 2px 2px 2px black;
  }
 
 .nextLevel {
@@ -89,11 +101,11 @@
     font-weight: bold;
     border: 2px solid white;
     border-radius: 10px;
-    right: 2%;
-    top: 90%;
+    right: 40%;
+    top: 63%;
     text-transform: uppercase;
     text-align: center;
-    background-color: transparent;
+    background-color: #26DBFF;
 }
 
 .newGame {
@@ -105,13 +117,17 @@
     font-weight: bold;
     border: 2px solid white;
     border-radius: 10px;
-    left: 2%;
-    top: 90%;
+    left: 42%;
+    top: 55%;
     text-transform: uppercase;
     text-align: center;
-    background-color: transparent;
+    background-color: #26DBFF;
 }
 
+.nextLevel:hover, .newGame:hover {
+    background-color: aqua;
+    color: black;
+}
 
 
 
