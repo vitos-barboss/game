@@ -9,24 +9,29 @@
 
 .title {
     color: white;
-    font-size: 30px;
-    /*padding: 15px 0;*/
-    margin-left: 55px;
+    font-size: 25px;
+    margin-left: -20px;
     padding-top: 20px;
     list-style-type: none;
-
 }
 
-.playerScore, .gunmanScore {
+.level {
+    position: absolute;
+    color: white;
+    font-size: 25px;
+    margin-left: 20px;
+    margin-top: 389px;
+    width: 99px;
+    display: inline;
+}
+
+.playerScore,
+.gunmanScore {
     display: inline-block;
 }
 
 .playerScore:before {
-    content: "Player ";
-}
-
-.gunmanScore:after {
-    content: " Gunman";
+    content: "Your cash: ";
 }
 
 .scoreCount:before {
@@ -41,43 +46,130 @@
     animation-timing-function: linear;
     transition: 5s;
     transform: scale(2);
-    margin-top: 155px;
+    margin-top: 100px;
     right: 0;
-
+    visibility: hidden;
 }
 
-.gunman {
+.gunman1 {
     background-image: url("../img/gunman.png");
-    height: 138px;
-    width: 75px;
-    background-size: 1056px 768px;
-    /*transform: rotateY(180deg);*/
-    animation: walking 1s step-start;
-    animation-iteration-count: 5;
-
+    height: 153px;
+    background-size: 1056px 853px;
+    animation: walking1 0.5s step-start;
+    animation-iteration-count: infinite;
+    background-position: 1056px 853px;
 }
 
-.fall {
-    animation: falling 1s;
+.gunman2 {
+    background-image: url("../img/gunman.png");
+    height: 170px;
+    background-size: 1056px 853px;
+    animation: walking2 0.4s step-start;
+    animation-iteration-count: infinite;
+    background-position: 1059px -159px;
 }
 
-@keyframes walking {
-    0%  {background-position: 0px 0px;}
-    33% {background-position: -75px 0px;}
-    66% {background-position: -150px 0px;}
+.gunman3 {
+    background-image: url("../img/gunman.png");
+    height: 168px;
+    width: 66px;
+    background-size: 1055px 763px;
+    animation: walking3 0.4s step-start;
+    animation-iteration-count: infinite;
+    background-position: 1059px -300px;
 }
 
-@keyframes falling {
-    0%  {background-position: -608px 0px;}
-    33% {background-position: -683px 0px;}
-    66% {background-position: -758px 0px;}
+.gunman4 {
+    background-image: url("../img/gunman.png");
+    height: 154px;
+    background-size: 1056px 853px;
+    animation: walking4 0.5s step-start;
+    animation-iteration-count: infinite;
+    background-position: 1056px -533px;
+}
+
+.gunman5 {
+    background-image: url("../img/gunman.png");
+    height: 163px;
+    background-size: 1056px 853px;
+    animation: walking5 0.5s step-start;
+    animation-iteration-count: infinite;
+    background-position: 1056px -692px;
+}
+
+@keyframes walking1 {
+    0% {
+        background-position: 0px 0px;
+    }
+    33% {
+        background-position: -75px 0px;
+    }
+    66% {
+        background-position: -150px 0px;
+    }
+}
+
+@keyframes walking2 {
+    0% {
+        background-position: 1059px -159px;
+    }
+    33% {
+        background-position: 982px -159px;
+    }
+    66% {
+        background-position: 905px -159px;
+    }
+}
+
+@keyframes walking3 {
+    0% {
+        background-position: 1059px -300px;
+    }
+    33% {
+        background-position: 995px -300px;
+    }
+    66% {
+        background-position: 932px -300px;
+    }
+}
+
+@keyframes walking4 {
+    0% {
+        background-position: 0px -530px;
+    }
+    33% {
+        background-position: -77px -530px;
+    }
+    66% {
+        background-position: -152px -530px;
+    }
+}
+
+@keyframes walking5 {
+    0% {
+        background-position: 1057px -689px;
+    }
+    33% {
+        background-position: 981px -689px;
+    }
+    66% {
+        background-position: 904px -689px;
+    }
 }
 
 @keyframes shake {
-    0% { transform: rotate(-1deg); }
-    25% { transform: scale(1deg); }
-    50% { transform: scale(-2deg); }
-    100% { transform: scale(2deg); }
+    0% {
+        transform: rotate(-1deg);
+    }
+    25% {
+        transform: scale(1deg);
+    }
+    50% {
+        transform: scale(-2deg);
+    }
+    100% {
+        transform: scale(2deg);
+    }
 }
 
 .fightMessage {
@@ -90,7 +182,7 @@
     left: 40%;
     top: 26%;
     text-shadow: 2px 2px 2px black;
- }
+}
 
 .nextLevel {
     width: 186px;
@@ -101,11 +193,11 @@
     font-weight: bold;
     border: 2px solid white;
     border-radius: 10px;
-    right: 40%;
-    top: 63%;
+    right: 20%;
+    top: 90%;
     text-transform: uppercase;
     text-align: center;
-    background-color: #26DBFF;
+    background-color: transparent;
 }
 
 .newGame {
@@ -117,23 +209,32 @@
     font-weight: bold;
     border: 2px solid white;
     border-radius: 10px;
-    left: 42%;
+    left: 20%;
+    top: 90%;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: transparent;
+}
+
+.startGame {
+    width: 186px;
+    position: absolute;
+    margin: 0 auto;
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 10px;
+    left: 39%;
     top: 55%;
     text-transform: uppercase;
     text-align: center;
-    background-color: #26DBFF;
+    background-color: transparent;
 }
 
-.nextLevel:hover, .newGame:hover {
+.nextLevel:hover,
+.newGame:hover,
+.startGame:hover {
     background-color: aqua;
     color: black;
 }
-
-
-
-
-
-
-
-
-
